@@ -22,21 +22,31 @@ Step by Step Instructions to Install Nvidia  GeForce RTX™ 3070 Display Driver 
 3. Clean/Uninstall existing Nvidia drivers if any
 
     
-    `sudo apt remove nvidia-driver`
+    ```
+    sudo apt remove nvidia-driver
+    ```
 
-    `sudo dpkg -l | grep nvidia`
+    ```
+    sudo dpkg -l | grep nvidia
+    ```
 
     If you find any nvidia packages still with above command , then run
 
-    `sudo apt remove nvidia-*`
+    ```
+    sudo apt remove nvidia-*
+    ```
 
     Remove any existing Nvidia dkms kernal modules 
 
-    `ls -l /lib/modules/$(uname -r)/updates/dkms`
+    ```
+    ls -l /lib/modules/$(uname -r)/updates/dkms
+    ```
 
     if you see any *.ko files then remove them 
 
-    `rm -rf /lib/modules/$(uname -r)/updates/dkms/*.ko`
+    ```
+    rm -rf /lib/modules/$(uname -r)/updates/dkms/*.ko
+    ```
 
     Reboot into console mode - see Step 2
 
@@ -46,7 +56,9 @@ Step by Step Instructions to Install Nvidia  GeForce RTX™ 3070 Display Driver 
 
     4.1. Check  to see if secure boot is enabled
 
-      `sudo mokutil --sb-state`
+      ```
+      sudo mokutil --sb-state
+      ```
 
       if above command returns "Secureboot enabled" then your system is secure boot is enabled , otherwise enable secure boot from UEFI.
 
@@ -75,7 +87,9 @@ Step by Step Instructions to Install Nvidia  GeForce RTX™ 3070 Display Driver 
 
     Check UEFI will prompt the key to register at next reboot 
 
-    `sudo mokutil --list-new`
+    ```
+    sudo mokutil --list-new
+    ```
 
     if it prints the certificate information, then it means that we can register the mok key in UEFI while next reboot.
 
@@ -91,13 +105,17 @@ Step by Step Instructions to Install Nvidia  GeForce RTX™ 3070 Display Driver 
 
     Validate that Key is registred in MOK
 
-    `sudo dmesg | grep  'cert'`
+    ```
+    sudo dmesg | grep  'cert'
+    ```
 
     you should see the  message that  Nvidia related key  is registreded.
 
     You can also check by using below command
 
-    `sudo mokutil --list-enrolled | grep 'Subject'`
+    ```
+    sudo mokutil --list-enrolled | grep 'Subject'
+    ```
 
     you should see 'Nvidia Display Driver' 
 
@@ -105,19 +123,27 @@ Step by Step Instructions to Install Nvidia  GeForce RTX™ 3070 Display Driver 
 
     edit  /etc/apt/sources.list
     
-    `sudo vim /etc/apt/sources.list`
+    ```
+    sudo vim /etc/apt/sources.list
+    ```
 
     and  add/edit deb http://deb.debian.org/debian/ bookworm line  to look like  below 
 
-    `deb http://deb.debian.org/debian/ bookworm main contrib non-free non-free-firmware`
+    ```
+    deb http://deb.debian.org/debian/ bookworm main contrib non-free non-free-firmware
+    ```
 
     upgrade apt
 
-    `sudo apt upgrade` 
+    ```
+    sudo apt upgrade
+    ``` 
 
     install  nvidia drivers 
 
-    `sudo apt install nvidia-driver firmware-misc-nonfree`
+    ```
+    sudo apt install nvidia-driver firmware-misc-nonfree
+    ```
     
     above command will install nvidia drivers and kernal modules 
 
@@ -126,7 +152,9 @@ Step by Step Instructions to Install Nvidia  GeForce RTX™ 3070 Display Driver 
     installed  kernal module files exists in /lib/modules/$(uname -r)/updates/dkms directory.
 
       
-    `ls -l  /lib/modules/$(uname -r)/updates/dkms`
+    ```
+    ls -l  /lib/modules/$(uname -r)/updates/dkms
+    ```
 
     You should see *.ko files. 
      
@@ -148,7 +176,9 @@ Step by Step Instructions to Install Nvidia  GeForce RTX™ 3070 Display Driver 
     ```
     cd  to   /lib/modules/$(uname -r)/updates/dkms/
 
-    `cd /lib/modules/$(uname -r)/updates/dkms/`
+    ```
+    cd /lib/modules/$(uname -r)/updates/dkms/
+    ```
 
     run below script
 
