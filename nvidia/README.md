@@ -157,5 +157,5 @@ Step by Step Instructions to Install Nvidia  GeForce RTX™ 3070 Display Driver 
     ```
 8. When new Linux Kernal Version is released 
 
-    if you updated your system to new kernal version , then repete the Step 7  to sign the *.ko nvidia modules.
+    if you updated your system to new kernal version , then follow Step 7  to sign the *.ko nvidia driver modules.
      
