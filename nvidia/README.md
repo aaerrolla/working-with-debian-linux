@@ -1,4 +1,7 @@
-# Installing NVIDIA GeForce RTX™ 3070 Display Driver 
+# Debain 12(Bookwarm) - Installing NVIDIA GeForce RTX™ 3070 Display Driver 
+
+Step by Step Instructions to Install Nvidia  GeForce RTX™ 3070 Display Driver for Lenovo Legion 5 Pro running Debain 12 Bookwarm .
+
 
 1. UEFI Settings
 
