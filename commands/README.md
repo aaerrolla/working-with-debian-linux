@@ -41,3 +41,9 @@ Or
 ```
 getent group lxd
 ```
+
+3. using && 
+
+```
+egrep -q 'vmx|svm' /proc/cpuinfo && echo yes || echo no
+```
