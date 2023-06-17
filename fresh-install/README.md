@@ -6,10 +6,10 @@ The first thing you want to do after fresh install of debain is to make your pri
     ```
     echo "foo ALL=(ALL) ALL" > /etc/sudoers.d/foo
     ```
-    foo : user, this can be group name also
-    ALL : host , here ALL means any host ,  you can mention specific host if you want like localhost
-    (ALL): run as user ,  here ALL means any user , you can provide a specific user like root
-    ALL: run any command  ,  run all commands ,  you can restrict by providing list of commands sperated by , 
+    foo : user, this can be group name also  
+    ALL : host , here ALL means any host ,  you can mention specific host if you want like localhost  
+    (ALL): run as user ,  here ALL means any user , you can provide a specific user like root  
+    ALL: run any command  ,  run all commands ,  you can restrict by providing list of commands sperated by ,   
     
     Validate 
     ```
@@ -33,12 +33,19 @@ The first thing you want to do after fresh install of debain is to make your pri
   sudo apt install build-essentials
   ```
   
-3. Other Essential Tools & packages 
-  
-  Install  curl , git, vim , jq, tree, 
-  
-  ```
-  sudo apt install curl git vim jq  tree
-  ```
-  
+3. Other Essential Tools & packages
 
+  
+  Install  curl , git, vim , jq, tree, tmux
+  
+  ```
+  sudo apt install curl git vim-gtk3 jq  tree tmux 
+  ```
+  
+4. Install antivirus tools clamav
+    ```
+    sudo apt update && sudo apt install clamav clamav-daemon
+    ```
+    restart
+   
+6. 
