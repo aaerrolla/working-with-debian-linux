@@ -112,6 +112,5 @@ egrep -q 'vmx|svm' /proc/cpuinfo && echo yes || echo no
     
     Screen cast. 
 
-<figure class="video_container">
-  <iframe src="https://youtu.be/hoJq1jGXclY" frameborder="0" allowfullscreen="true"> </iframe>
-</figure>
+[![Watch the video](https://img.youtube.com/vi/hoJq1jGXclY/maxresdefault.jpg)](https://youtu.be/hoJq1jGXclY)
+
