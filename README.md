@@ -8,6 +8,14 @@ OK, Debain is my daily driver, I'm using Debain from last 20 years. Documenting 
     [Installing Nvidia Dislay Driver](./nvidia/README.md)
 
 2. Markdown : working with simple text based documents , very helpful in documenting.  
+
     [Markdown](./markdown/markdown.md)
 
-3. 
+3. Commands : some linux commands used frequently.
+
+    [Commands](./commands/README.md)
+
+4. After Fresh install of linux
+    tools & packages & setup on newly installed linux ( more specific to debian 12)
+
+    [After Fresh Debian  Install ](./fresh-install/README.md)
