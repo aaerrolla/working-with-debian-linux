@@ -110,3 +110,8 @@ egrep -q 'vmx|svm' /proc/cpuinfo && echo yes || echo no
     sudo dmesg -l warn -f kern
     ```
     
+    Screen cast. 
+
+<figure class="video_container">
+  <iframe src="https://youtu.be/hoJq1jGXclY" frameborder="0" allowfullscreen="true"> </iframe>
+</figure>
