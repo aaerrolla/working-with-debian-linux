@@ -19,3 +19,9 @@ OK, Debain is my daily driver, I'm using Debain from last 20 years. Documenting 
     tools & packages & setup on newly installed linux ( more specific to debian 12)
 
     [After Fresh Debian  Install ](./fresh-install/README.md)
+
+5. ufw Firewall
+    simple firewall for personal use linux system.
+
+    [ufw firewall ](./ufw/README.md)
+    
