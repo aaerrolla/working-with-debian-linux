@@ -70,8 +70,8 @@
 		printf("Hello World!");
 		return 0;
 	}
-	```https://www.cosmiccode.org
-	 	
+	```
+	 			
 
 10. Horizontal Rule
 
