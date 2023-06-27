@@ -33,4 +33,9 @@ virtualization using kvm, and for learning programming languages like python, go
     Installation and usage instructions.
 
     [KVM](./libvirt-kvm/README.md)
-    
+
+7. setup k8s multi node cluster with  minikube using kvm2 driver.
+
+    Step by step instruction to setup 3 node k8s cluster using minikube and kvm2
+
+    [minikube k8s cluster step by step](./minikube/README.md)
