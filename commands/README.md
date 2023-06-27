@@ -112,5 +112,6 @@ egrep -q 'vmx|svm' /proc/cpuinfo && echo yes || echo no
     
     Screen cast. 
 
-[![Watch the video](https://img.youtube.com/vi/hoJq1jGXclY/maxresdefault.jpg)](https://youtu.be/hoJq1jGXclY)
 
+[<img src="https://img.youtube.com/vi/hoJq1jGXclY/hqdefault.jpg" width="600" height="300"
+/>](https://www.youtube.com/embed/hoJq1jGXclY)
