@@ -5,112 +5,113 @@ Kernel Virtual Machine or KVM is a virtualization solution for for linux, it con
 module kvm.ko , which provides the core virtualization infrastructure and a processor specific module 
 kvm-intel.ko, or kvm-amd.ko.
 
-1. Installation 
+## 1. Check for virtualization support in your system.
 
-    1.1. Install Qemu ( Quick Emulator) & Libvirt
+```
+egrep -q 'vmx|svm' /proc/cpuinfo && echo yes || echo no
+```
 
-
-    ```
-    sudo apt install --no-install-recommends qemu-system libvirt-clients libvirt-daemon-system
-    ```
-
-
-    *qemu-system:* qemu (Quick Emulator) type 2 hypervisor & os emulator
-
-    *libvirt-clients:*  c toolkit to interact with kvm virtualization , it contains tools like libvirt, virsh and other client tools 
-
-    *libvirt-daemon-system:* contains the configuration files to run the libvirt daemon as a system service
-
-    1.2. Install virtinst & virt-manager , virt-viewer
-
-    ```
-    sudo apt update && sudo apt install virtinst virt-manager
-    ```
-
-    virtinst: command line utilities to create and edit virtual machines , like virt-install
-
-    virt-manager: virt-manager application is a GUI for managing virtual machines through libvirt
-
-    virt-viewer: display the graphical console of the vm.
+output should be yes ,  if not check your system bios and UEFI settings to enable virtualization.
 
 
+## 2. Installation 
+
+2.1. Install Qemu ( Quick Emulator) & Libvirt
 
 
-
-2. Add user to libvirt group.
-
-    to manage virtual machines as a regular user , add user to libvirt group
-
-    ```
-    sudo adduser <user-name> libvirt
-    ```
+```
+sudo apt install --no-install-recommends qemu-system libvirt-clients libvirt-daemon-system
+```
 
 
-    test ,  to list virtual m/c  ( called domains )
+*qemu-system:* qemu (Quick Emulator) type 2 hypervisor & os emulator
 
-    ```
-    virsh list --all
-    ```
+*libvirt-clients:*  c toolkit to interact with kvm virtualization , it contains tools like libvirt, virsh and other client tools 
 
-    Below Sample output 
+*libvirt-daemon-system:* contains the configuration files to run the libvirt daemon as a system service
 
-    ![Sample output](./images/virsh_list_all.png)
+2.2. Install virtinst & virt-manager , virt-viewer
 
-3. User Vs System vm's
+```
+sudo apt update && sudo apt install virtinst virt-manager
+```
 
-    by default virsh run as normal user connects to libvirt using qemu:///session string , this will list only vm's belong to this user 
+virtinst: command line utilities to create and edit virtual machines , like virt-install
 
-    to list system vm's  use 
+virt-manager: virt-manager application is a GUI for managing virtual machines through libvirt
 
-    qemu:///system  connect string
-
-    ```
-    virsh --connect qemu:///system list --all
-    ```
+virt-viewer: display the graphical console of the vm.
 
 
-4. creating simple vm using virtinst.
+## 3. Add user to libvirt group.
 
-    ```
-    virt-install --virt-type kvm --name bullseye-amd64 \
-    --location http://deb.debian.org/debian/dists/bullseye/main/installer-amd64/ \
-    --os-variant debian11 \
-    --disk size=10 --memory 1000 \
-    --graphics none \
-    --console pty,target_type=serial \
-    --extra-args "console=ttyS0"
-    ```
+to manage virtual machines as a regular user , add user to libvirt group
 
-    above command will create a debian11 vm 
-    
-    --name : name of the vm
-    --virt-type : type of vm
-    --os-variant   :  debian11
-    --disk size=10 
-    --memory 1000MB 
-    --graphics none:  no graphics at install time
-
-    --console pty,target_type=serial  
-    --extra-args "console=ttyS0"   : opens serial port for installation messages to show on terminal
-
-    instead of using local image it downloads and installs from  --location
+```
+sudo adduser <user-name> libvirt
+```
 
 
-5. Using virt-manager to connect to vm
+test ,  to list virtual m/c  ( called domains )
 
-    Launch Virtual Machine Manager gui 
+```
+virsh list --all
+```
 
-    ![Virtual Machine Manager](./images/virtual-machine-manager-open.png)
+Below Sample output 
 
-    select vm and click power on virtual machine button.(1)
+![Sample output](./images/virsh_list_all.png)
 
-    and then  click on Open (2)
+## 4. User Vs System vm's
 
-    Sample VM Login screen
+by default virsh run as normal user connects to libvirt using qemu:///session string , this will list only vm's belong to this user 
 
-    ![VM Login Screen](./images/accessing-vm-using-virt-manager.png)
+to list system vm's  use 
+
+qemu:///system  connect string
+
+```
+virsh --connect qemu:///system list --all
+```
 
 
+## 5. creating simple vm using virtinst.
+
+```
+virt-install --virt-type kvm --name bullseye-amd64 \
+--location http://deb.debian.org/debian/dists/bullseye/main/installer-amd64/ \
+--os-variant debian11 \
+--disk size=10 --memory 1000 \
+--graphics none \
+--console pty,target_type=serial \
+--extra-args "console=ttyS0"
+```
+
+above command will create a debian11 vm 
+
+--name : name of the vm
+--virt-type : type of vm
+--os-variant   :  debian11
+--disk size=10 
+--memory 1000MB 
+--graphics none:  no graphics at install time
+
+--console pty,target_type=serial  
+--extra-args "console=ttyS0"   : opens serial port for installation messages to show on terminal
+
+instead of using local image it downloads and installs from  --location
 
 
+## 6. Using virt-manager to connect to vm
 
+Launch Virtual Machine Manager gui 
+
+![Virtual Machine Manager](./images/virtual-machine-manager-open.png)
+
+select vm and click power on virtual machine button.(1)
+
+and then  click on Open (2)
+
+Sample VM Login screen
+
+![VM Login Screen](./images/accessing-vm-using-virt-manager.png)
