@@ -89,15 +89,15 @@ virt-install --virt-type kvm --name bullseye-amd64 \
 
 above command will create a debian11 vm 
 
---name : name of the vm
---virt-type : type of vm
---os-variant   :  debian11
---disk size=10 
---memory 1000MB 
---graphics none:  no graphics at install time
+--name : name of the vm  
+--virt-type : type of vm  
+--os-variant   :  debian11  
+--disk size=10   
+--memory 1000MB   
+--graphics none:  no graphics at install time  
 
---console pty,target_type=serial  
---extra-args "console=ttyS0"   : opens serial port for installation messages to show on terminal
+--console pty,target_type=serial   
+--extra-args "console=ttyS0"   : opens serial port for installation messages to show on terminal 
 
 instead of using local image it downloads and installs from  --location
 
@@ -106,7 +106,9 @@ instead of using local image it downloads and installs from  --location
 
 Launch Virtual Machine Manager gui 
 
-![Virtual Machine Manager](./images/virtual-machine-manager-open.png)
+
+![Virtual Machine Manager](../images/virtual-machine-manager-open.png "Virtual MAchine Manager")
+
 
 select vm and click power on virtual machine button.(1)
 
