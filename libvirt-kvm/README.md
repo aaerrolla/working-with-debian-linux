@@ -107,7 +107,7 @@ instead of using local image it downloads and installs from  --location
 Launch Virtual Machine Manager gui 
 
 
-![Virtual Machine Manager](../images/virtual-machine-manager-open.png "Virtual MAchine Manager")
+![Virtual Machine Manager](./images/virtual-machine-manager-open.png "Virtual MAchine Manager")
 
 
 select vm and click power on virtual machine button.(1)
